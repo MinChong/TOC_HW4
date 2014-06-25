@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
 
+'''
+program : TocHW3.py
+Name : 黃崇珉
+Student ID : F74006250
+Description : Parsing the information
+'''
 import json
 import urllib2
 import sys 
 import re
-
 
 if len(sys.argv) != 2:
     print '$: <url>'
@@ -20,7 +25,6 @@ except (ValueError, urllib2.URLError) as e:
     
 info = []
 road = ""
-#jsonSource = urllib.urlopen(sys.argv[1])
 regexp = re.compile(r"{\"鄉鎮市區\":\"(?P<region>[^\"]+)\",[^,]+,\"土地區段[^\:]+:\"(?P<location>[^\"]+)\","
                     r"([^,]+,)+\"交易年月\":(?P<date>[0-9]+),([^,]+,)+\"總價元\":(?P<price>[0-9]+)")
     
